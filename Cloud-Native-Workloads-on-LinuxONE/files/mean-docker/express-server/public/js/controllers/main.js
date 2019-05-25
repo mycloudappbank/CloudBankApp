@@ -1,5 +1,6 @@
 angular.module('todoController', [])
 
+
 	// inject the Todo service factory into our controller
 	.controller('mainController', ['$scope','$http','Todos', function($scope, $http, Todos) {
 		$scope.formData = {};
@@ -20,7 +21,7 @@ angular.module('todoController', [])
 
 			// validate the formData to make sure that something is there
 			// if form is empty, nothing will happen
-			if ($scope.formData.text != undefined) {
+			if ($scope.formData.text != undefined&& $scope.formData.value!=undefined) {
 				$scope.loading = true;
 
 				// call the create function from our service (returns a promise object)
