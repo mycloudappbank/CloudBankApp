@@ -1,7 +1,7 @@
-var Todo = require('./models/todo');
+var DBHandle = require('./models/todo');
 
 function getTodos(res) {
-    Todo.find(function (err, todos) {
+    DBHandle.find(function (err, todos) {
 
         // if there is an error retrieving, send the error. nothing after res.send(err) will execute
         if (err) {
@@ -25,7 +25,7 @@ module.exports = function (app) {
     app.post('/api/todos', function (req, res) {
 
         // create a todo, information comes from AJAX request from Angular
-        Todo.create({
+        DBHandle.create({
             text: req.body.text,
             value: req.body.value,
             done: false
@@ -41,7 +41,7 @@ module.exports = function (app) {
 
     // delete a todo
     app.delete('/api/todos/:todo_id', function (req, res) {
-        Todo.remove({
+        DBHandle.remove({
             _id: req.params.todo_id
         }, function (err, todo) {
             if (err)
