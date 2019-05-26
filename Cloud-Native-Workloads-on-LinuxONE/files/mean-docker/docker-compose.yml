@@ -10,6 +10,6 @@ services:
       - database
 
   database: # name of the second service
-    image: sinenomine/mongodb-s390x # specify image to build container from
+    image: mongo # specify image to build container from
     ports:
       - "27017:27017" # specify port forwarding
