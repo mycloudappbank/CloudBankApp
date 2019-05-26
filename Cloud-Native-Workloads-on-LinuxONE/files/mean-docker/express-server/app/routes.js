@@ -1,7 +1,8 @@
-var DBHandle = require('./models/todo');
+var _TodoDBHandle = require('./models/todo');
+var DBHandle = require('./models/user');
 
 function getTodos(res) {
-    DBHandle.find(function (err, todos) {
+    _TodoDBHandle.find(function (err, todos) {
 
         // if there is an error retrieving, send the error. nothing after res.send(err) will execute
         if (err) {
@@ -25,7 +26,7 @@ module.exports = function (app) {
     app.post('/api/todos', function (req, res) {
 
         // create a todo, information comes from AJAX request from Angular
-        DBHandle.create({
+        _TodoDBHandle.create({
             text: req.body.text,
             value: req.body.value,
             done: false
@@ -41,13 +42,39 @@ module.exports = function (app) {
 
     // delete a todo
     app.delete('/api/todos/:todo_id', function (req, res) {
-        DBHandle.remove({
+        _TodoDBHandle.remove({
             _id: req.params.todo_id
         }, function (err, todo) {
             if (err)
                 res.send(err);
 
             getTodos(res);
+        });
+    });
+
+    //----------------------for bank application-------------------------------
+
+    // get a user by name
+    app.get('/api/get_user_by_name/:user_name',function(req,res){
+        user_name = req.params.user_name
+        DBHandle.find({user_name: user_name},function(err,user){
+            if(err){
+                res.send(err);
+            }
+            res.json(user);
+        })
+    })
+
+    // add a user
+    app.post('/api/add_user',function(req,res){
+        DBHandle.create({
+            user_name: req.body.username,
+            password: req.body.password,
+            balance: 0
+        }, function (err, user){
+            if(err)
+                res.send(err);
+            res.json(user);
         });
     });
 

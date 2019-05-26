@@ -13,7 +13,7 @@ module.exports = mongoose.model('User', {
     },
 
     balance: {
-        type: Float,
+        type: Number,
         default: 0
     }
 });
