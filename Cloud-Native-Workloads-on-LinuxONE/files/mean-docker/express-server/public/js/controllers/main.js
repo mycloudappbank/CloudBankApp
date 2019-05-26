@@ -33,15 +33,28 @@ angular.module('todoController', [])
 						$scope.formData = {}; // clear the form so our user is ready to enter another
 						$scope.todos = data; // assign our new list of todos
 					});
-
-
-
-
-
 			}
-
-
 		};
+
+		//DEPOSIT===================================================================
+		//when submitting the deposit form, send the text to the node API
+		$scope.deposit=function(){
+			// validate the formData to make sure that something is there
+			// if form is empty, nothing will happen
+			if ($scope.formData.text != undefined&& $scope.formData.value!=undefined) {
+				$scope.loading = true;
+
+				// call the compare function from our service (returns a promise object)
+				Todos.compare($scope.formData)
+
+					// if successful comparion, call our get function to get all the new todos
+					.success(function(data) {
+						$scope.loading = false;
+						$scope.formData = {}; // clear the form so our user is ready to enter another
+						$scope.todos = data; // assign our new list of todos
+					});
+			}
+		}
 
 		// DELETE ==================================================================
 		// delete a todo after checking it

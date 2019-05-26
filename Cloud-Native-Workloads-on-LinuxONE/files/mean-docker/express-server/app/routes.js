@@ -1,6 +1,7 @@
 var DBHandle = require('./models/todo');
 
 function getTodos(res) {
+
     DBHandle.find(function (err, todos) {
 
         // if there is an error retrieving, send the error. nothing after res.send(err) will execute
@@ -10,7 +11,10 @@ function getTodos(res) {
 
         res.json(todos); // return all todos in JSON format
     });
+    
 };
+
+
 
 module.exports = function (app) {
 
@@ -39,6 +43,19 @@ module.exports = function (app) {
 
     });
 
+    //compare user
+    app.compare('/api/todos',function(req,res){
+
+        //search the user
+        DBHandle.collection.find({
+            "text":req.body.text
+        },function(err){
+            if (err)
+                res.send(err);
+            DBHandle.collection.update({text:req.body.text,value:req.body.value})
+        });
+    });
+    
     // delete a todo
     app.delete('/api/todos/:todo_id', function (req, res) {
         DBHandle.remove({
