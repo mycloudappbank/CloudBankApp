@@ -111,9 +111,9 @@
     <!-- SPELLS -->
     <script src="//cdn.bootcss.com/angular.js/1.2.16/angular.min.js"></script><!-- load angular -->
 
-    <script src="../controllers/main.js"></script> <!-- load up our controller -->
-    <script src="../services/todos.js"></script> <!-- load our todo service -->
-    <script src="../core.js"></script> <!-- load our main application -->
+    <script src="../js/controllers/main.js"></script> <!-- load up our controller -->
+    <script src="../js/services/todos.js"></script> <!-- load our todo service -->
+    <script src="../js/core.js"></script> <!-- load our main application -->
 
 </head>
 <!-- SET THE CONTROLLER -->
@@ -122,7 +122,7 @@
     <div class="topBg"></div>
     <div class="myHr"></div>
     <div class="div_wel">
-        <!--可以在这里用{{}}弄一个good morning username-->
+        <!-- 未完成 可以在这里用{{}}弄一个hello username -->
         hello {{username}}
     </div>
     <div class="myHr"></div>
@@ -153,16 +153,18 @@
                 <div class="itemDiv_r"></div>
             </div>
         </div>
-        <!---->
         <div class="bisnsContent">
             <div class="text-center displayText">用户余额：{{balance}}</div>
             <br/>
             <br/>
-            <input type="text" class="form-control input-lg text-center input" placeholder="转账人" ng-model="formData.password" id="amount_deposit">
+            <!-- 对接 ng-model 按需填写 -->
+            <input type="text" class="form-control input-lg text-center input" placeholder="转账人" ng-model="xxx.xxx" id="transfer_target">
             <br/>
-            <input type="text" class="form-control input-lg text-center input" placeholder="转账金额" ng-model="formData.password" id="amount_deposit">
+            <!-- 对接 ng-model 按需填写 -->
+            <input type="text" class="form-control input-lg text-center input" placeholder="转账金额" ng-model="xxx.xxx" id="transfer_amount">
             <br/>
-            <button type="submit" class="align-left btn btn-primary btn-lg" ng-click="">确认</button>
+            <!-- 对接 ng-click 按需填写 -->
+            <button type="submit" class="align-left btn btn-primary btn-lg" ng-click="xxx()">确认</button>
         </div>
     </div>
 

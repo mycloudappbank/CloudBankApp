@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
 
-    <title>withdrawals</title>
+    <title>user</title>
 
     <!-- SCROLLS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
@@ -70,7 +70,7 @@
             align-items: center;
         }
         .bisnsBg{
-            background-color: #b3e6fe;
+            background-color: #74a0ff;
             width: 100%;
             height: 510px;
             display: flex;
@@ -88,31 +88,27 @@
             justify-content: center;
             align-items: center;
         }
-        .input {
-            width: 49%;
-        }
         .displayText{
-            font-size: 20px;
-            font-weight: bold;
-            font-family: "Microsoft JhengHei UI";
+            font-size: 50px;
+            text-align: center;        /*文字水平居中对齐*/
+            font-family: "Cooper Black";
         }
         .myHr{
             height: 10px;
         }
         .topBg{
-            background-color: #b3e6fe;
+            background-color: #7097f2;
             height: 40px;
         }
-
 
     </style>
 
     <!-- SPELLS -->
     <script src="//cdn.bootcss.com/angular.js/1.2.16/angular.min.js"></script><!-- load angular -->
 
-    <script src="../controllers/main.js"></script> <!-- load up our controller -->
-    <script src="../services/todos.js"></script> <!-- load our todo service -->
-    <script src="../core.js"></script> <!-- load our main application -->
+    <script src="../js/controllers/main.js"></script> <!-- load up our controller -->
+    <script src="../js/services/todos.js"></script> <!-- load our todo service -->
+    <script src="../js/core.js"></script> <!-- load our main application -->
 
 </head>
 <!-- SET THE CONTROLLER -->
@@ -121,7 +117,7 @@
     <div class="topBg"></div>
     <div class="myHr"></div>
     <div class="div_wel">
-        <!--可以在这里用{{}}弄一个good morning username-->
+        <!-- 未完成 可以在这里用{{}}弄一个hello username -->
         hello {{username}}
     </div>
     <div class="myHr"></div>
@@ -152,18 +148,10 @@
                 <div class="itemDiv_r"></div>
             </div>
         </div>
-        <!---->
         <div class="bisnsContent">
-            <div class="text-center displayText">用户余额：{{balance}}</div>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <input type="text" class="form-control input-lg text-center input" placeholder="取款金额" ng-model="formData.password" id="amount_deposit">
-            <br/>
-            <br/>
-            <button type="submit" class="align-left btn btn-primary btn-lg" ng-click="">确认</button>
-        </div>
+            <div class="text-center displayText">请选择业务</div>
+            </div>
+    </div>
 
 
 </div>

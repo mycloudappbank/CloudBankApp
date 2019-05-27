@@ -59,14 +59,14 @@
 	<div class="div_empty"></div>
 
 	<div id="userInfo-wrap" class="input-box col-sm-6 col-sm-offset-3">
-		<input type="text" class="form-control input-lg text-center" placeholder="Username's goes here" ng-model="formData.text" id="user_name">
+		<input type="text" class="form-control input-lg text-center" placeholder="Username's goes here" ng-model="formData.username" id="user_name">
 		<br/>
-		<input type="password" class="form-control input-lg text-center" placeholder="Amount's goes here" ng-model="formData.value" id="user_password">
+		<input type="password" class="form-control input-lg text-center" placeholder="Amount's goes here" ng-model="formData.password" id="user_password">
 	</div>
 
 	<div class="col-sm-4 col-sm-offset-4 text-center">
-		<button type="submit" class="align-left btn btn-primary btn-lg" ng-click="">Sign up</button>
-		<button type="submit" class="align-right btn btn-primary btn-lg" ng-click="">Sign in</button>
+		<button type="submit" class="align-left btn btn-primary btn-lg" ng-click="sign_up()">Sign up</button>
+		<button type="submit" class="align-right btn btn-primary btn-lg" ng-click="login()">Sign in</button>
 	</div>
 </div>
 </body>
