@@ -8,7 +8,7 @@ module.exports = mongoose.model('Todo', {
     },
 
     value: {
-        type: String,
+        type: Number,
         default: ''
     }
 
