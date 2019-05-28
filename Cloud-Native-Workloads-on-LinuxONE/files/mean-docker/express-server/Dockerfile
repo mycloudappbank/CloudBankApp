@@ -1,5 +1,5 @@
 # Create image based off of the official Node 6 image
-FROM ubuntu:latest
+FROM s390x/ibmnode:latest
 
 # Create a directory where our app will be placed
 RUN mkdir -p /usr/src
@@ -11,9 +11,6 @@ WORKDIR /usr/src
 COPY package.json /usr/src
 
 # Install dependecies
-RUN apt-get update && apt-get install -y curl
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
-RUN apt-get update && apt-get install -y nodejs
 RUN npm install
 
 # Get all the code needed to run the app

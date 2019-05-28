@@ -1,6 +1,13 @@
 var _TodoDBHandle = require('./models/todo');
 var DBHandle = require('./models/user');
 
+function getBalance(res){
+     DBHandle.find(function(err){
+         if(err)
+             res.send(err);
+     });
+};
+
 function getTodos(res) {
     _TodoDBHandle.find(function (err, todos) {
 
@@ -78,8 +85,37 @@ module.exports = function (app) {
         });
     });
 
+    //deposit money
+    app.post('/api/deposit_money',function(req,res){
+       DBHandle.update({
+            savings:req.body.mySavings,
+            balance:temp+req.body.mySavings
+        },function(err){
+            if(err)
+                res.send(err);
+        })
+    });
+
+    //withdraw money
+    app.post('/api/withdraw_money',function(req,res){
+        DBHandle.update({
+            withdrawal:req.body.withdrawal,
+            balance:balance-req.body.withdrawal
+        },function(err,myWithdrawal){
+            if(err)
+                res.send(err);
+            getBalance(balance);
+            res.json(myWithdrawal);
+        })
+    });
+
+    //get a user's balance
+    app.get('/api/withdraw_money',function(req,res){
+        getBalance(res);
+    })
     // application -------------------------------------------------------------
     app.get('*', function (req, res) {
         res.sendFile(__dirname + '/public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
     });
 };
+
