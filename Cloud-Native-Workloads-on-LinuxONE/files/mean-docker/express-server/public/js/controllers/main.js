@@ -90,7 +90,7 @@ angular.module('todoController', [])
 				.success(function (data) {
 					user = data[0]
 					if (user.password != undefined && user.password === $scope.formData.password) {
-						location.href = '../../../business/user.html'
+						location.href = '../../business/user.html'
 					}
 					else {
 						alert("password error or user does not exist");
