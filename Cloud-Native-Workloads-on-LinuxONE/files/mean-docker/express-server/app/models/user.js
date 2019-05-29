@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 //user
 module.exports = mongoose.model('User', {
-    username: {
+    user_name: {
         type: String,
         default: ''
     },
@@ -15,21 +15,6 @@ module.exports = mongoose.model('User', {
     balance: {
         type:Number,
         default: 0
-    },
-
-    temp:{
-        type:Number,
-        default:balance
-    },
-    
-    savings:{
-        type:Number,
-        default:0
-    },
-
-    withdrawal:{
-        type:Number,
-        default:0
     }
 });
 
