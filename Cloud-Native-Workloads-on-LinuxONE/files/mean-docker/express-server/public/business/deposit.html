@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 
     <!-- style.css -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/style/style.css">
 
     <!-- SPELLS -->
 	<script src="https://cdn.bootcss.com/angular.js/1.5.0-rc.2/angular.min.js"></script><!-- load angular -->
@@ -38,24 +38,24 @@
     <div class="bisnsBg">
         <div class="menuContent">
             <div class="group">
-                <div class="itemDiv" data-id="a">
-                    <a href="deposit.html">
+                <div>
+                    <a href="deposit.html" class="itemA itemA_hover">
                         <span class="itemA">存款</span>
                     </a>
                 </div>
                 <div class="itemDiv_r"></div>
             </div>
             <div class="group">
-                <div class="itemDiv" data-id="b">
-                    <a href="withdrawals.html">
+                <div>
+                    <a href="withdrawals.html"  class="itemA itemA_hover">
                         <span class="itemA">取款</span>
                     </a>
                 </div>
                 <div class="itemDiv_r"></div>
             </div>
             <div class="group">
-                <div class="itemDiv" data-id="c">
-                    <a href="transfer.html">
+                <div>
+                    <a href="transfer.html"  class="itemA itemA_hover">
                         <span class="itemA">转账</span>
                     </a>
                 </div>
@@ -73,15 +73,9 @@
             <br/>
             <br/>
             <!-- 对接 ng-click 按需填写 -->
-            <button type="submit" class="align-left btn btn-primary btn-lg" ng-click="xxx()">确认</button>
+            <button type="submit" class="button" ng-click="xxx()">确认</button>
         </div>
     </div>
-
-
 </div>
-
-<script>
-
-</script>
 </body>
 </html>

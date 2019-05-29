@@ -1,0 +1,61 @@
+html 					{ overflow-y:scroll; }
+body 					{
+    padding-top:50px;
+    background-color: #eaeaea;
+    background-image:url(../img/bk.png);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+}
+.div_wel{
+    height:200px;  /*设置div的大小*/
+    /*background-color: #ededed;*/
+    text-align: center;        /*文字水平居中对齐*/
+    line-height: 200px;        /*设置文字行距等于div的高度*/
+    overflow:hidden;
+    font-size: 130px;
+    font-family: "Cooper Black";
+}
+.div_logo{
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+}
+.div_empty{
+    height: 80px;
+}
+.input-box{
+    height: 200px;
+}
+.align-left{
+    float: left;
+}
+.align-right{
+    float: right;
+}
+.a_td{
+    background-color: #5a5a5a;
+    border-width: 0 0 0 0;
+    height: 45px;
+    font-size: 18px;
+    line-height: 45px;
+    text-align: center;
+    display: block;
+    color: white;
+}
+.a_hover:hover{
+    background-color: #474747;
+    color: #eaeaea;
+    text-decoration: none;
+}
+.button{
+    border-width: 0 0 0 0;
+    border-radius: 8px;
+    width: 100%;
+    background-color: #333333;
+    color: white;
+    height: 45px;
+    font-size: 18px;
+    line-height: 45px;
+    text-align: center;
+}
