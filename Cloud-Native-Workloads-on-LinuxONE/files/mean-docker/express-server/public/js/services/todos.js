@@ -18,7 +18,16 @@ angular.module('todoService', [])
 			},
 			add_user: function(user_data){
 				return $http.post('/api/add_user',user_data);
-			}
+			},
 
+		    deposit_money:function(money){
+				return $http.post('/api/deposit_money',money);
+			},
+
+			withdraw_money:function(myMoney){
+				return $http.post('/api/withdraw_money',myMoney);
+			}
+            
 		}
 	}]);
+
