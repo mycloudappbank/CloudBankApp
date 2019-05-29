@@ -49,7 +49,6 @@ angular.module('todoController', ['ngCookies'])
 				});
 		};
 
-<<<<<<< HEAD
 		$scope.login_user = undefined
 
 		// login status check
@@ -61,7 +60,6 @@ angular.module('todoController', ['ngCookies'])
 				location.href = "../index.html"
 			}
 		}
-=======
 		//deposit
         $scope.deposit=function(){
 			if($scope.formData.mySavings!=undefined&&$scope.formData.mySavings>0){
@@ -95,7 +93,6 @@ angular.module('todoController', ['ngCookies'])
 			})
 		};
 
->>>>>>> f8b28f40f9035047b8bdf75699e20305219026b7
 
 		// login
 		$scope.login = function () {
