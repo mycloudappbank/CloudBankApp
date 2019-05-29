@@ -1,10 +1,8 @@
-var login_user = undefined;
-
-angular.module('todoController', [])
+angular.module('todoController', ['ngCookies'])
 
 
 	// inject the Todo service factory into our controller
-	.controller('mainController', ['$scope', '$http', 'Todos', function ($scope, $http, Todos) {
+	.controller('mainController', ['$scope', '$http', 'Todos','$cookies', function ($scope, $http, Todos, $cookies) {
 		$scope.formData = {};
 		$scope.loading = true;
 
@@ -51,6 +49,18 @@ angular.module('todoController', [])
 				});
 		};
 
+		$scope.login_user = undefined
+
+		// login status check
+		$scope.check_login_status = function(){
+			console.log($cookies.get('user_name'))
+			user_name = $cookies.get('user_name')
+			if (user_name === undefined){
+				alert("please login")
+				location.href = "../index.html"
+			}
+		}
+
 		// login
 		$scope.login = function () {
 			$scope.loading = true;
@@ -58,8 +68,8 @@ angular.module('todoController', [])
 				.success(function (data) {
 					user = data[0]
 					if (user.password != undefined && user.password === $scope.formData.password) {
+						$cookies.put('user_name',user.user_name)
 						location.href = '../../business/user.html'
-						login_user = user;
 					}
 					else {
 						alert("password error or user does not exist");
