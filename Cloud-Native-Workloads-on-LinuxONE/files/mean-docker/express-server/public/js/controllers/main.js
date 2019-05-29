@@ -49,6 +49,7 @@ angular.module('todoController', ['ngCookies'])
 				});
 		};
 
+<<<<<<< HEAD
 		$scope.login_user = undefined
 
 		// login status check
@@ -60,6 +61,41 @@ angular.module('todoController', ['ngCookies'])
 				location.href = "../index.html"
 			}
 		}
+=======
+		//deposit
+        $scope.deposit=function(){
+			if($scope.formData.mySavings!=undefined&&$scope.formData.mySavings>0){
+				$scope.loading = true;
+				Todos.deposit_money($scope.formData)
+				.success(function(data){
+					$scope.mySavings=data;
+					$scope.loading=false;
+					$scope.formData={};
+					location.href = '../../../business/deposit.html'
+				});
+			}
+		};
+
+		//withdraw
+        $scope.withdraw=function(){
+			$scope.loading=true;
+			Todos.withdraw_money($scope.formData.withdraw)
+			.success(function(data){
+				user =data[0];
+				if($scope.formData.withdraw<=0){
+					alert("The withdraw money should be greater than 0.");
+					location.href = '../../../business/withdrawals.html'
+				}
+				else if($scope.formData.withdraw>user.balance){
+					alert("The withdraw money should be less than balance.");
+					location.href = '../../../business/withdrawals.html'
+				}
+				$scope.loading = false;
+				$scope.formData = {balance:$scope.formData.balance};
+			})
+		};
+
+>>>>>>> f8b28f40f9035047b8bdf75699e20305219026b7
 
 		// login
 		$scope.login = function () {
@@ -105,3 +141,4 @@ angular.module('todoController', ['ngCookies'])
 				})
 		}
 	}]);
+

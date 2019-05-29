@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 
 <!-- ASSIGN OUR ANGULAR MODULE -->
 <html ng-app="meanTodo">
@@ -14,27 +14,46 @@
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 	<style>
 		html 					{ overflow-y:scroll; }
-		body 					{ padding-top:50px; }
+		body 					{ 
+			padding-top:50px; 
+			background-image:url(img/background3.jpg); 
+			background-size: cover;
+			background-repeat:no-repeat;
+			background-attachment: fixed;
+			}
 		.div_wel{
 			height:200px;  /*设置div的大小*/
-			background-color: #ededed;
 			text-align: center;        /*文字水平居中对齐*/
 			line-height: 200px;        /*设置文字行距等于div的高度*/
 			overflow:hidden;
 			font-size: 80px;
 			font-family: "Cooper Black";
+			 color: #FFF;
 		}
 		.div_empty{
 			height: 120px;
 		}
 		.input-box{
-			height: 160px;
+			height: 60px;
 		}
 		.align-left{
 			float: left;
 		}
 		.align-right{
 			float: right;
+		}
+		.div_box{
+			width:160px;
+			margin:0 auto;
+		}
+		.div_center{
+			width: 200px;
+			margin: 0 auto;
+		}
+		.div_logo{
+			margin:0 auto;
+			width:160px;
+			height:120px;  /*设置div的大小*/
 		}
 
 
@@ -51,24 +70,29 @@
 
 </head>
 <!-- SET THE CONTROLLER -->
-<body ng-controller="mainController">
+<body ng-controller="mainController" >
 <div class="container">
 	<div class="div_wel">
-		Welcome
+		Welcome		
+	</div>
+	<div class="div_logo">	
+		<img src="img/IBMlogo.png" width="160"/>
 	</div>
 
-	<div class="div_empty"></div>
 
-	<div id="userInfo-wrap" class="input-box col-sm-6 col-sm-offset-3">
+<div class = "div_center">
+	<div id="userInfo-wrap" class="input-box col-sm-6 col-sm-offset-3 div_box">
 		<input type="text" class="form-control input-lg text-center" placeholder="Username's goes here" ng-model="formData.username" id="user_name">
 		<br/>
 		<input type="password" class="form-control input-lg text-center" placeholder="Amount's goes here" ng-model="formData.password" id="user_password">
 	</div>
 
-	<div class="col-sm-4 col-sm-offset-4 text-center">
+	<div class="col-sm-4 col-sm-offset-4 div_box ">
 		<button type="submit" class="align-left btn btn-primary btn-lg" ng-click="sign_up()">Sign up</button>
 		<button type="submit" class="align-right btn btn-primary btn-lg" ng-click="login()">Sign in</button>
 	</div>
+</div>
+</div>
 </div>
 </body>
 </html>
