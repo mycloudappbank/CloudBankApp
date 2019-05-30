@@ -71,11 +71,13 @@ angular.module('todoController', ['ngCookies'])
 						// data 是什么
 						// $scope.formData = { balance: data };
 						alert("Congratulation！Deposit sucessfully！");
+						location.href = '../../business/deposit.html'
 					});
 				$scope.loading = false;
 			}
 			else {
 				alert("Sorry,you had better deposit a larger-than-zero amount.");
+				location.href = '../../business/deposit.html'
 			}
 		};
 
@@ -92,7 +94,7 @@ angular.module('todoController', ['ngCookies'])
 									// data 是什么
 									// $scope.formData = { balance: data };
 									alert("Congratulation！Withdraw sucessfully！");
-									location.href = '../../business/user.html'
+									location.href = '../../business/withdrawals.html'
 								})
 						}
 						else{
@@ -124,21 +126,25 @@ angular.module('todoController', ['ngCookies'])
 												// data 是什么
 												// $scope.formData = { balance: data };
 												alert("Congratulation！Transfer sucessfully！");
+												location.href = '../../business/transfer.html'
 											})
 									}
 									else{
 										alert("Sorry,the user you are transferring to is not existent.");
+										location.href = '../../business/transfer.html'
 									}
 								})
 						}
 						else{
 							alert("Sorry,your balance is insufficient！");
+							location.href = '../../business/transfer.html'
 						}
 					})
 				$scope.loading = false;
 			}
 			else {
 				alert("Sorry,you had better transfer to user with a larger-than-zero amount.");
+				location.href = '../../business/transfer.html'
 			}
 		};
 
