@@ -19,15 +19,15 @@ angular.module('todoService', [])
 			add_user: function(user_data){
 				return $http.post('/api/add_user',user_data);
 			},
-
-		    deposit_money:function(money){
-				return $http.post('/api/deposit_money',money);
+		  deposit: function(info){
+				return $http.post('/api/deposit', info);
 			},
-
-			withdraw_money:function(myMoney){
-				return $http.post('/api/withdraw_money',myMoney);
+			withdraw: function(info){
+				return $http.post('/api/withdraw', info);
+			},
+			transfer: function(info){
+				return $http.post('/api/transfer', info);
 			}
-            
 		}
 	}]);
 

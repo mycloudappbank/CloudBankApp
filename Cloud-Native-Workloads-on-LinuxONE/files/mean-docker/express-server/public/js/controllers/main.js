@@ -60,39 +60,84 @@ angular.module('todoController', ['ngCookies'])
 				location.href = "../index.html"
 			}
 		}
-		//deposit
-        $scope.deposit=function(){
-			if($scope.formData.mySavings!=undefined&&$scope.formData.mySavings>0){
+
+		// deposit
+		$scope.deposit = function () {
+			if ($scope.formData.deposit_amount != undefined && $scope.formData.deposit_amount > 0) {
 				$scope.loading = true;
-				Todos.deposit_money($scope.formData)
-				.success(function(data){
-					$scope.mySavings=data;
-					$scope.loading=false;
-					$scope.formData={};
-					location.href = '../../../business/deposit.html'
-				});
+				$scope.formData.user_name = $cookies.get('user_name');
+				Todos.deposit($scope.formData)
+					.success(function (data) {
+						// data 是什么
+						// $scope.formData = { balance: data };
+						alert("存款成功！");
+					});
+				$scope.loading = false;
+			}
+			else {
+				alert("存款金额为空或小于零！");
 			}
 		};
 
-		//withdraw
-        $scope.withdraw=function(){
-			$scope.loading=true;
-			Todos.withdraw_money($scope.formData.withdraw)
-			.success(function(data){
-				user =data[0];
-				if($scope.formData.withdraw<=0){
-					alert("The withdraw money should be greater than 0.");
-					location.href = '../../../business/withdrawals.html'
-				}
-				else if($scope.formData.withdraw>user.balance){
-					alert("The withdraw money should be less than balance.");
-					location.href = '../../../business/withdrawals.html'
-				}
+		// withdraw
+		$scope.withdraw = function () {
+			if ($scope.formData.withdrawals_amount != undefined && $scope.formData.withdrawals_amount > 0) {
+				$scope.loading = true;
+				$scope.formData.user_name = $cookies.get('user_name');
+				Todos.get_user_by_name($scope.formData.user_name)
+					.success(function (data) {
+						if (data[0].balance >= $scope.formData.withdrawals_amount) {
+							Todos.withdraw($scope.formData)
+								.success(function (data) {
+									// data 是什么
+									// $scope.formData = { balance: data };
+									alert("取款成功！");
+								})
+						}
+						else{
+							alert("余额不足！");
+						}
+					})
 				$scope.loading = false;
-				$scope.formData = {balance:$scope.formData.balance};
-			})
+			}
+			else {
+				alert("取款金额为空或小于零！");
+			}
 		};
 
+		// transfer
+		$scope.transfer = function () {
+			if ($scope.formData.transfer_amount != undefined && $scope.formData.transfer_amount > 0) {
+				$scope.loading = true;
+				$scope.formData.transfer_source = $cookies.get('user_name');
+				Todos.get_user_by_name($scope.formData.transfer_source)
+					.success(function (data) {
+						if (data[0].balance >= $scope.formData.transfer_amount) {
+							Todos.get_user_by_name($scope.formData.transfer_target)
+								.success(function (data) {
+									if (data.length != 0) {
+										Todos.transfer($scope.formData)
+											.success(function (data) {
+												// data 是什么
+												// $scope.formData = { balance: data };
+												alert("转账成功！");
+											})
+									}
+									else{
+										alert("用户不存在！");
+									}
+								})
+						}
+						else{
+							alert("余额不足！");
+						}
+					})
+				$scope.loading = false;
+			}
+			else {
+				alert("转账金额为空或小于零！");
+			}
+		};
 
 		// login
 		$scope.login = function () {
