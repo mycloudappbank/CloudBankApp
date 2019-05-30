@@ -6,13 +6,25 @@ body 					{
     background-repeat:no-repeat;
     background-attachment: fixed;
 }
+/* 引入CooperBlack字体 */
+@font-face {
+    font-family: CooperBlack;
+    src: url("../fonts/CooperBlack/CooperBlack.eot");
+    src: local('CooperBlack'), local('Roboto-Regular'),
+    url('../fonts/CooperBlack/CooperBlack.svg#test') format('svg'),
+    url('../fonts/CooperBlack/CooperBlack.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CooperBlack/CooperBlack.woff') format('woff'),
+    url('../fonts/CooperBlack/CooperBlack.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 .div_wel{
     height:65px;  /*设置div的大小*/
     /*background-color: #ececec;*/
     text-align: center;        /*文字水平居中对齐*/
     line-height: 65px;        /*设置文字行距等于div的高度*/
     font-size: 100px;
-    font-family: "Cooper Black";
+    font-family: "CooperBlack";
 }
 .menuContent {
     position: relative;
