@@ -77,7 +77,7 @@ ICp-banking-microservices项目中
 ### **4. Discover the Helm chart**
 --------------------------
 
-###**5. 配置 Helm Chart**
+### **5. 配置 Helm Chart**
 ----------------
 
 ### **6. 查看应用**
@@ -163,7 +163,7 @@ ICp-banking-microservices项目中
 
   输入你想要取出的金额，点击确认，图：
 
-###**转账**
+### **转账**
 --
 
   输入转账目标账户和转账金额，点击确认，图：
