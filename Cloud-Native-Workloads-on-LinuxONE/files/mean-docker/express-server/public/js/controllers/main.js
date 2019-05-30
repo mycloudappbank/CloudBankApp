@@ -182,5 +182,11 @@ angular.module('todoController', ['ngCookies'])
 					}
 				})
 		}
+
+		// log out
+		$scope.log_out = function(){
+			$cookies.put("user_name",undefined);
+			location.href("../index.html");
+		}
 	}]);
 
