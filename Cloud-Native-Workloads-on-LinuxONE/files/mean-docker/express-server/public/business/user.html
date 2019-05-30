@@ -27,6 +27,31 @@
 </head>
 <!-- SET THE CONTROLLER -->
 <body ng-controller="mainController" ng-init="check_login_status()">
+<!-- toolBar-->
+<div class="toolBar">
+    <div class="toolBar_div_right toolBar_margin">
+        <button class="toolBar_button" ng-click="logout()">退出</button>
+    </div>
+    <div class="toolBar_div_right toolBar_margin">
+        <div class="toolBar_div_right toolBar_text">
+            <!-- 未完成 绑定{{balance}}-->
+            balance
+        </div>
+        <div class="toolBar_div_right">
+            <img src="../static/img/dollar.png" width="34"/>
+        </div>
+    </div>
+    <div class="toolBar_div_right toolBar_margin">
+        <div class="toolBar_div_right toolBar_text">
+            <!-- 未完成 绑定{{username}}-->
+            username
+        </div>
+        <div class="toolBar_div_right">
+            <img src="../static/img/userLogo.png" width="34"/>
+        </div>
+    </div>
+</div>
+
 <div class="container">
     <div class="topBg"></div>
     <div class="myHr"></div>
