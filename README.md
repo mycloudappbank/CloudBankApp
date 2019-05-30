@@ -1,6 +1,7 @@
-#CloudBankApp
 
-##项目背景：
+# CloudBankApp
+
+## 项目背景：
 开源软件已经从一个低成本的平台扩展到一个企业数据库、云计算和下一代应用的平台。这些工作负载需要底层硬件基础架构提供更高级别的可扩展性、安全性和可用性。     
 
 
@@ -20,7 +21,7 @@ ICp-banking-microservices项目中
 
 
 
-##如何像我们一样构建银行应用程序：
+## 如何像我们一样构建银行应用程序：
 > Step 1 - Discover and locally run the banking application
  1. 获取项目代码
  
@@ -34,10 +35,10 @@ ICp-banking-microservices项目中
  6. 查看应用
 
 
-###Step 1 - Discover and locally run the banking application
+### Step 1 - Discover and locally run the banking application
 
 
-###**1. 获取项目代码**
+### **1. 获取项目代码**
 ---------
 
 首先登录 Github，Fork 该实验的 Github Repo - ICp-banking-microservices 到自己账号下
@@ -49,9 +50,9 @@ ICp-banking-microservices项目中
 
 
 
-###Step 2 - Build and deploy a Docker image to IBM Cloud private
+### Step 2 - Build and deploy a Docker image to IBM Cloud private
 
-###**2. 构建 Docker 镜像**
+### **2. 构建 Docker 镜像**
 ---------------
 
 
@@ -66,24 +67,24 @@ ICp-banking-microservices项目中
 
     [root@myserver banking-application]$ docker run -p 3000:3000 abelsu7-banking-image
 
-###**3. Deploy the Docker image to IBM Cloud private**
+### **3. Deploy the Docker image to IBM Cloud private**
 -----------------------------------------------
 
 
-###Step 3 - Instantiate the banking microservice from the IBM Cloud private catalog
+### Step 3 - Instantiate the banking microservice from the IBM Cloud private catalog
 
 
-###**4. Discover the Helm chart**
+### **4. Discover the Helm chart**
 --------------------------
 
 ###**5. 配置 Helm Chart**
 ----------------
 
-###**6. 查看应用**
+### **6. 查看应用**
 -----------
 
 
-##项目设计文档
+## 项目设计文档
 #### **前端页面**
 - 银行首页 //截图
 - 登陆页面 //截图
@@ -133,31 +134,31 @@ ICp-banking-microservices项目中
 
 -------
 
-##Application使用说明：
+## Application使用说明：
 > * 注册
 > * 登录
 > * 存款
 > * 取款
 > * 转账
 
-###**注册**
+### **注册**
 --
 
 点击sign up界面，进入注册界面。图：
 输入username 和 password  点击确认按钮，图：
 
-###**登录**
+### **登录**
 --
 
 输入username 和 password  点击确认按钮，图：
 此时界面会显示你的余额，以及系统提供的基本服务选项。
 
-###**存款**
+### **存款**
 --
 
   输入你想要存储的金额，点击确认，图：
 
-###**取款**
+### **取款**
 --
 
   输入你想要取出的金额，点击确认，图：
