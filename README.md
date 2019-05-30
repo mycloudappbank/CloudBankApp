@@ -23,13 +23,13 @@ ICp-banking-microservices项目中
 
 
 ## 部署步骤：
-> Step One
-1. 安装 Docker
-2. 安装 docker-compose
-3. 安装并运行 WebSphere Liberty
-4. 安装并运行 WordPress
-5. MEAN Stack 环境准备
-6. 启动 MEAN Stack
+ 
+>  1. 安装 Docker
+>  2. 安装 docker-compose
+>  3. 安装并运行 WebSphere Liberty
+>  4. 安装并运行 WordPress
+>  5. MEAN Stack 环境准备
+>  6. 启动 MEAN Stack
 
 ### Step One
 
