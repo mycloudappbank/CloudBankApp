@@ -70,12 +70,14 @@ angular.module('todoController', ['ngCookies'])
 					.success(function (data) {
 						// data 是什么
 						// $scope.formData = { balance: data };
-						alert("存款成功！");
+						alert("Congratulation！Deposit sucessfully！");
+						location.href = '../../business/deposit.html'
 					});
 				$scope.loading = false;
 			}
 			else {
-				alert("存款金额为空或小于零！");
+				alert("Sorry,you had better deposit a larger-than-zero amount.");
+				location.href = '../../business/deposit.html'
 			}
 		};
 
@@ -91,17 +93,20 @@ angular.module('todoController', ['ngCookies'])
 								.success(function (data) {
 									// data 是什么
 									// $scope.formData = { balance: data };
-									alert("取款成功！");
+									alert("Congratulation！Withdraw sucessfully！");
+									location.href = '../../business/withdrawals.html'
 								})
 						}
 						else{
-							alert("余额不足！");
+							alert("Sorry,your balance is insufficient！");
+							location.href = '../../business/withdrawals.html'
 						}
 					})
 				$scope.loading = false;
 			}
 			else {
-				alert("取款金额为空或小于零！");
+				alert("Sorry,you had better withdraw a larger-than-zero amount.");
+				location.href = '../../business/withdrawals.html'
 			}
 		};
 
@@ -120,22 +125,26 @@ angular.module('todoController', ['ngCookies'])
 											.success(function (data) {
 												// data 是什么
 												// $scope.formData = { balance: data };
-												alert("转账成功！");
+												alert("Congratulation！Transfer sucessfully！");
+												location.href = '../../business/transfer.html'
 											})
 									}
 									else{
-										alert("用户不存在！");
+										alert("Sorry,the user you are transferring to is not existent.");
+										location.href = '../../business/transfer.html'
 									}
 								})
 						}
 						else{
-							alert("余额不足！");
+							alert("Sorry,your balance is insufficient！");
+							location.href = '../../business/transfer.html'
 						}
 					})
 				$scope.loading = false;
 			}
 			else {
-				alert("转账金额为空或小于零！");
+				alert("Sorry,you had better transfer to user with a larger-than-zero amount.");
+				location.href = '../../business/transfer.html'
 			}
 		};
 
@@ -150,7 +159,7 @@ angular.module('todoController', ['ngCookies'])
 						location.href = '../../business/user.html'
 					}
 					else {
-						alert("password error or user does not exist");
+						alert("Password error or the user does not exist.");
 					}
 
 					$scope.loading = false;
@@ -168,7 +177,7 @@ angular.module('todoController', ['ngCookies'])
 					if (data.length != 0) {
 						$scope.loading = false;
 						$scope.formData = {username:$scope.formData.username};
-						alert("user already exist, please sign in");
+						alert("The user already exist, please sign in.");
 					}
 					else {
 						// add user
@@ -177,7 +186,7 @@ angular.module('todoController', ['ngCookies'])
 								console.log(data)
 								$scope.loading = false;
 								$scope.formData = {username:$scope.formData.username};
-								alert("successfully sign up, use your username to login in");
+								alert("Successfully sign up, use your username to login in");
 							})
 					}
 				})
