@@ -196,7 +196,7 @@ angular.module('todoController', ['ngCookies'])
 		}
 
 		// log out
-		$scope.log_out = function(){
+		$scope.logout = function(){
 			$cookies.put("user_name",undefined);
 			location.href("../index.html");
 		}
