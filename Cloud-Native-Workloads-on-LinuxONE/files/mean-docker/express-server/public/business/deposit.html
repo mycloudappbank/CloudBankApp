@@ -26,7 +26,7 @@
 
 </head>
 <!-- SET THE CONTROLLER -->
-<body ng-controller="mainController" ng-init="check_login_status()">
+<body ng-controller="mainController" ng-init="check_login_status();show_info()">
 <!-- toolBar-->
 <div class="toolBar">
     <div class="toolBar_div_right toolBar_margin">
@@ -34,8 +34,7 @@
     </div>
     <div class="toolBar_div_right toolBar_margin">
         <div class="toolBar_div_right toolBar_text">
-            <!-- 未完成 绑定{{balance}}-->
-            balance
+            {{balance}}
         </div>
         <div class="toolBar_div_right">
             <img src="../static/img/dollar.png" width="34"/>
@@ -43,8 +42,7 @@
     </div>
     <div class="toolBar_div_right toolBar_margin">
         <div class="toolBar_div_right toolBar_text">
-            <!-- 未完成 绑定{{username}}-->
-            username
+            {{username}}
         </div>
         <div class="toolBar_div_right">
             <img src="../static/img/userLogo.png" width="34"/>
@@ -56,7 +54,6 @@
     <div class="topBg"></div>
     <div class="myHr"></div>
     <div class="div_wel">
-        <!-- 未完成 可以在这里用{{}}弄一个hello username -->
         hello {{username}}
     </div>
     <div class="myHr"></div>
@@ -93,11 +90,9 @@
             <br/>
             <br/>
             <br/>
-            <!-- 对接 ng-model 按需填写 -->
             <input type="text" class="form-control input-lg text-center input" placeholder="存款金额" ng-model="formData.deposit_amount" id="deposit_amount">
             <br/>
             <br/>
-            <!-- 对接 ng-click 按需填写 -->
             <button type="submit" class="button" ng-click="deposit()">确认</button>
         </div>
     </div>

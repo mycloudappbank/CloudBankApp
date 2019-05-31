@@ -61,6 +61,15 @@ angular.module('todoController', ['ngCookies'])
 			}
 		}
 
+		// show info
+		$scope.show_info = function(){
+			$scope.username = $cookies.get('user_name');
+			Todos.get_user_by_name($cookies.get('user_name'))
+				.success(function (data) {
+					$scope.balance = data[0].balance;
+				})
+		}
+
 		// deposit
 		$scope.deposit = function () {
 			if ($scope.formData.deposit_amount != undefined && $scope.formData.deposit_amount > 0) {
@@ -68,8 +77,6 @@ angular.module('todoController', ['ngCookies'])
 				$scope.formData.user_name = $cookies.get('user_name');
 				Todos.deposit($scope.formData)
 					.success(function (data) {
-						// data 是什么
-						// $scope.formData = { balance: data };
 						alert("Congratulation！Deposit sucessfully！");
 						location.href = '../../business/deposit.html'
 					});
@@ -91,8 +98,6 @@ angular.module('todoController', ['ngCookies'])
 						if (data[0].balance >= $scope.formData.withdrawals_amount) {
 							Todos.withdraw($scope.formData)
 								.success(function (data) {
-									// data 是什么
-									// $scope.formData = { balance: data };
 									alert("Congratulation！Withdraw sucessfully！");
 									location.href = '../../business/withdrawals.html'
 								})
@@ -123,8 +128,6 @@ angular.module('todoController', ['ngCookies'])
 									if (data.length != 0) {
 										Todos.transfer($scope.formData)
 											.success(function (data) {
-												// data 是什么
-												// $scope.formData = { balance: data };
 												alert("Congratulation！Transfer sucessfully！");
 												location.href = '../../business/transfer.html'
 											})
