@@ -110,7 +110,11 @@ module.exports = function (app) {
              user_name: req.body.transfer_target
          },{
              $inc: {'balance': req.body.transfer_amount}
-         });
+         },function(err, data){
+            if(err)
+                res.send(err);
+            res.json(data);
+        });
          DBHandle.update({
              user_name: req.body.transfer_source
          },{
