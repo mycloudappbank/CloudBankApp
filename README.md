@@ -240,11 +240,12 @@ express-server/Dockerfile修改如下：
 
 
 ## 项目设计文档
+
 #### **前端页面**
-- 银行首页 //截图
-- 登陆页面 //截图
-- 存钱/取钱页面 //截图
-- 转账页面//截图
+- 银行首页
+- 登陆页面 
+- 存钱/取钱页面
+- 转账页面
 - 理财业务界面(构想，未实现)
 #### **前端业务逻辑**
 
@@ -256,10 +257,9 @@ express-server/Dockerfile修改如下：
  B-->D[转账界面]
  E-->F[贷款]
  E-->G[投资]
- E-->H[负债]
+ E-->H[存款]
 ```
 #### **后端业务逻辑**
-
 ```
  graph TB
  A[后端首页]-->B{用户信息}
@@ -273,19 +273,28 @@ express-server/Dockerfile修改如下：
 
 #### **数据库设计**
    
-
-表1| 属性1 |属性2
+##### 用户信息表
+username|password|account_balance
 ---|---|---
-# | #|
-# | #|
+bank | 111111|1000000000|
+张三 | zhang123|1000|
 
-表2| 属性1 |属性2
+##### 存（取）记录表
+ username|amount|account_balance
 ---|---|---
-# | #|
-# | #|
+张三 | 1000|2000|
 
 
+##### 转账记录表
+source_username|target_username|amount
+---|---|---
+张三|李四|1000|
 
+
+##### 理财记录表（未实现）
+username|product_catalog|amount
+---|---|---
+张三|贷款|500|
 
 
 -------
@@ -302,28 +311,28 @@ express-server/Dockerfile修改如下：
 
 点击注册按钮，输入username 和 password 
 再次输入你的password，最后点击下方的注册按钮，图：
-
+![](https://github.com/mycloudappbank/CloudBankApp/blob/master/image/sign_up.png)
 ### **登录**
 ------
 
 输入username 和 password  点击确认按钮，图：
 此时界面会显示你的余额，以及系统提供的基本服务选项，图：
-
+![](https://github.com/mycloudappbank/CloudBankApp/blob/master/image/sign_in.png)
 ### **存款**
 ------
 
   输入你想要存储的金额，点击确认按钮，图：
-
+![](https://github.com/mycloudappbank/CloudBankApp/blob/master/image/deposit.png)
 ### **取款**
 ------
 
   输入你想要取出的金额，点击确认按钮，图：
-
+![](https://github.com/mycloudappbank/CloudBankApp/blob/master/image/withdrawals.png)
 ### **转账**
 ------
 
   输入转账目标账户和转账金额，点击确认按钮，图：
-
+![](https://github.com/mycloudappbank/CloudBankApp/blob/master/image/transfer.png)
 
 
 
